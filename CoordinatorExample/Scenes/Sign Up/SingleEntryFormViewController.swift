@@ -110,3 +110,21 @@ private extension SingleEntryFormViewController {
     }
     
 }
+
+// MARK: - StoryboardInstantiable
+
+extension SingleEntryFormViewController: StoryboardInstantiable {
+    
+    static var storyboardName: String {
+        return "SignUp"
+    }
+    
+    class func build(intent: Intent, newUser: NewUser?, delegate: SingleEntryFormViewControllerDelegate) -> SingleEntryFormViewController {
+        let singleEntryFormViewController = instantiateInitial()
+        singleEntryFormViewController.intent = intent
+        singleEntryFormViewController.newUser = newUser
+        singleEntryFormViewController.delegate = delegate
+        return singleEntryFormViewController
+    }
+    
+}

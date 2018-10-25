@@ -60,3 +60,18 @@ extension HomeViewController: SingleEntryFormViewControllerDelegate {
     }
 }
 
+// MARK: - StoryboardInstantiable
+
+extension HomeViewController: StoryboardInstantiable {
+    
+    static var storyboardName: String {
+        return "Home"
+    }
+    
+    class func build() -> HomeViewController {
+        let homeViewController = instantiateInitial()
+        return homeViewController
+    }
+    
+}
+
