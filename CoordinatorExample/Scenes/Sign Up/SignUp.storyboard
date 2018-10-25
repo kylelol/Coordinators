@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QbN-NE-1Dh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Single Entry Form View Controller-->
+        <scene sceneID="zZg-P7-rr4">
+            <objects>
+                <viewController id="QbN-NE-1Dh" customClass="SingleEntryFormViewController" customModule="CoordinatorExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I5M-lc-S5Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBI-Hz-Fj9">
+                                <rect key="frame" x="16" y="60" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i2H-KF-lnc">
+                                <rect key="frame" x="16" y="106" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7Ie-i6-oAb"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="i2H-KF-lnc" firstAttribute="leading" secondItem="2Yu-gz-qT5" secondAttribute="leading" constant="16" id="3Ej-h8-SYL"/>
+                            <constraint firstItem="2Yu-gz-qT5" firstAttribute="trailing" secondItem="ZBI-Hz-Fj9" secondAttribute="trailing" constant="16" id="LZK-Vb-4v3"/>
+                            <constraint firstItem="ZBI-Hz-Fj9" firstAttribute="top" secondItem="2Yu-gz-qT5" secondAttribute="top" constant="40" id="PSB-Ih-7Q6"/>
+                            <constraint firstItem="ZBI-Hz-Fj9" firstAttribute="leading" secondItem="2Yu-gz-qT5" secondAttribute="leading" constant="16" id="XLB-Cq-5pa"/>
+                            <constraint firstItem="i2H-KF-lnc" firstAttribute="top" secondItem="ZBI-Hz-Fj9" secondAttribute="bottom" constant="25" id="qWr-L4-lY5"/>
+                            <constraint firstItem="2Yu-gz-qT5" firstAttribute="trailing" secondItem="i2H-KF-lnc" secondAttribute="trailing" constant="16" id="tZb-L7-VTi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2Yu-gz-qT5"/>
+                    </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="i2H-KF-lnc" id="VZU-vw-TDr"/>
+                        <outlet property="intentDescriptionLabel" destination="ZBI-Hz-Fj9" id="eqc-tj-ZXy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WPu-0H-VrW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-335" y="-23"/>
+        </scene>
+    </scenes>
+</document>
