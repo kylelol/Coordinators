@@ -8,13 +8,6 @@
 
 import UIKit
 
-protocol SingleEntryFormViewControllerDelegate: class {
-    
-    func didTapCancel(in viewController: SingleEntryFormViewController)
-    func didSignUp(in viewController: SingleEntryFormViewController)
-    
-}
-
 final class SingleEntryFormViewController: UIViewController {
 
     enum Intent {
@@ -26,12 +19,8 @@ final class SingleEntryFormViewController: UIViewController {
     }
     
     @IBOutlet private var intentDescriptionLabel: UILabel!
-    @IBOutlet private var inputTextField: UITextField!
-    
-    weak var delegate: SingleEntryFormViewControllerDelegate?
-    
-    var newUser: NewUser?
-    
+    @IBOutlet var inputTextField: UITextField!
+        
     var intent: Intent = .email {
         didSet {
             displayIntent()
@@ -48,17 +37,6 @@ extension SingleEntryFormViewController {
         super.viewDidLoad()
         
         displayIntent()
-        
-        if navigationController?.viewControllers.count == 1 {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didTapCancelButton(_:)))
-        }
-        
-        switch intent {
-        case .email, .username:
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(didTapRightBarButtonItem(_:)))
-        case .password:
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(didTapRightBarButtonItem(_:)))
-        }
     }
     
 }
@@ -83,32 +61,6 @@ private extension SingleEntryFormViewController {
         }
     }
     
-    @objc dynamic func didTapCancelButton(_ sender: Any) {
-        delegate?.didTapCancel(in: self)
-    }
-    
-    @objc dynamic func didTapRightBarButtonItem(_ sender: Any) {
-        switch intent {
-        case .username:
-            newUser?.username = inputTextField.text
-            presentNextForm(with: .email)
-        case .email:
-            newUser?.email = inputTextField.text
-            presentNextForm(with: .password)
-        case .password:
-            newUser?.password = inputTextField.text
-            delegate?.didSignUp(in: self)
-        }
-    }
-    
-    func presentNextForm(with intent: Intent) {
-        let nextFormViewController = storyboard?.instantiateInitialViewController() as! SingleEntryFormViewController
-        nextFormViewController.intent = intent
-        nextFormViewController.newUser = newUser
-        nextFormViewController.delegate = delegate
-        navigationController?.pushViewController(nextFormViewController, animated: true)
-    }
-    
 }
 
 // MARK: - StoryboardInstantiable
@@ -119,11 +71,9 @@ extension SingleEntryFormViewController: StoryboardInstantiable {
         return "SignUp"
     }
     
-    class func build(intent: Intent, newUser: NewUser?, delegate: SingleEntryFormViewControllerDelegate) -> SingleEntryFormViewController {
+    class func build(intent: Intent) -> SingleEntryFormViewController {
         let singleEntryFormViewController = instantiateInitial()
         singleEntryFormViewController.intent = intent
-        singleEntryFormViewController.newUser = newUser
-        singleEntryFormViewController.delegate = delegate
         return singleEntryFormViewController
     }
     

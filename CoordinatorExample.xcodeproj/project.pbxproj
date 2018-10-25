@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3D639C8E2181EBD10068CC1C /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D639C8D2181EBD10068CC1C /* CoordinatorType.swift */; };
 		3D639C902181EBE10068CC1C /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D639C8F2181EBE10068CC1C /* BaseCoordinator.swift */; };
+		3D639C922181EC9F0068CC1C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D639C912181EC9F0068CC1C /* AppCoordinator.swift */; };
+		3D639C942181EDFF0068CC1C /* SignUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D639C932181EDFF0068CC1C /* SignUpCoordinator.swift */; };
+		3D639C962181EFD30068CC1C /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D639C952181EFD30068CC1C /* HomeCoordinator.swift */; };
 		3D7751E62181E25B00A0BFEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7751E52181E25B00A0BFEA /* AppDelegate.swift */; };
 		3D7751E82181E25B00A0BFEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7751E72181E25B00A0BFEA /* HomeViewController.swift */; };
 		3D7751EB2181E25B00A0BFEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7751E92181E25B00A0BFEA /* Home.storyboard */; };
@@ -23,6 +26,9 @@
 /* Begin PBXFileReference section */
 		3D639C8D2181EBD10068CC1C /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		3D639C8F2181EBE10068CC1C /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		3D639C912181EC9F0068CC1C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3D639C932181EDFF0068CC1C /* SignUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCoordinator.swift; sourceTree = "<group>"; };
+		3D639C952181EFD30068CC1C /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		3D7751E22181E25B00A0BFEA /* CoordinatorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoordinatorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7751E52181E25B00A0BFEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D7751E72181E25B00A0BFEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 			children = (
 				3D7751E92181E25B00A0BFEA /* Home.storyboard */,
 				3D7751E72181E25B00A0BFEA /* HomeViewController.swift */,
+				3D639C952181EFD30068CC1C /* HomeCoordinator.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -100,6 +107,7 @@
 				3D7752032181E87700A0BFEA /* NewUser.swift */,
 				3D7751F72181E2A300A0BFEA /* SingleEntryFormViewController.swift */,
 				3D7752002181E38200A0BFEA /* SignUp.storyboard */,
+				3D639C932181EDFF0068CC1C /* SignUpCoordinator.swift */,
 			);
 			path = "Sign Up";
 			sourceTree = "<group>";
@@ -108,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				3D7751E52181E25B00A0BFEA /* AppDelegate.swift */,
+				3D639C912181EC9F0068CC1C /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -198,9 +207,12 @@
 				3D7751E82181E25B00A0BFEA /* HomeViewController.swift in Sources */,
 				3D639C8E2181EBD10068CC1C /* CoordinatorType.swift in Sources */,
 				3D7751E62181E25B00A0BFEA /* AppDelegate.swift in Sources */,
+				3D639C922181EC9F0068CC1C /* AppCoordinator.swift in Sources */,
 				3D639C902181EBE10068CC1C /* BaseCoordinator.swift in Sources */,
 				3D7751FF2181E33000A0BFEA /* StoryboardInstantiable.swift in Sources */,
+				3D639C962181EFD30068CC1C /* HomeCoordinator.swift in Sources */,
 				3D7751F82181E2A300A0BFEA /* SingleEntryFormViewController.swift in Sources */,
+				3D639C942181EDFF0068CC1C /* SignUpCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
