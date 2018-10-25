@@ -18,6 +18,11 @@ protocol CoordinatorType: class {
 
 extension CoordinatorType {
     
+    func coordinate(to coordinator: CoordinatorType) {
+        add(childCoordinator: coordinator)
+        coordinator.start()
+    }
+    
     func add(childCoordinator: CoordinatorType) {
         childCoordinators.append(childCoordinator)
     }
